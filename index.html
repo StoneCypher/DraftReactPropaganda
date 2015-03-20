@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Open Sans';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; margin-top: 0; }
+      .remark-slide-content h2 { font-size: 1.5em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+        right: 3em;
+      }
+      li              { color: #999; }
+      li:last-of-type { color: black; font-weight: bold; }
+      li p   { line-height: 1.25em; }
+      .red   { color: #fa0000; }
+      .gray  { color: #b7b8b2; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: #C91F5C;
+        text-decoration: none;
+      }
+      .inverse a {
+        color: rgb(249, 38, 114);
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      small code.remark-code {
+        font-size: 80%;
+      }
+      small img {
+        width: 50%;
+        margin-top: -1em;
+        margin-left: 7.5em;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .remark-inline-code               { display: inline-block; padding: 0.1em 0.3em; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      .bottomcut        { position: fixed; bottom: 2em; height: 30%; text-align: center; left: 0; right: 0; }
+      .bottomcut img    { height: 100%; max-width: 100%; }
+      .bottomcut.tall   { height: 60%; }
+
+      .bottomcut.ht     { height: 60%; }
+      .bottomcut.ht img { width: 100%; height: auto; }
+
+      .topcut           { position: fixed; top: 2em; height: 30%; text-align: center; left: 0; right: 0; }
+      .topcut img       { height: 100%; }
+
+      .midcutleft       { position: fixed; top: 7em; height: 30%; text-align: center; left: 15.25em; }
+      .midcutleft img   { height: 100%; }
+
+      .midcutright      { position: fixed; top: 7em; height: 30%; text-align: center; right: 6.5em; }
+      .midcutright img  { height: 100%; }
+
+      .midcutmid        { position: fixed; top: 7em; height: 30%; text-align: center; left: 13.25em; right: 4.5em; text-align: center; }
+      .midcutmid img    { height: 100%; }
+
+      .fit img          { display: block; width: 40%; margin: 0.5em 0 1em 0; }
+
+      .comparison       { position: fixed; bottom: 4em; left: 6em; right: 6em; }
+      .comparison td    { text-align: center; width: 50%; }
+      .comparison td+td { padding-left: 3em; }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #999;
+        width: 20%;
+        height: 92%;
+        float: left;
+        padding-top: 0.7em;
+        font-weight: 400;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+        font-weight: 700;
+      }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+
+
+
+---
+
+
+
+
+# React!  You!  Now!
+[ Internal talk: March 20 2015 ]
+
+
+
+
+---
+
+
+
+
+# I'm <span class="gray">John Haugeland</span>
+
+
+
+
+---
+
+
+
+
+# I'm <span class="gray">John Haugeland</span>
+(because pointing that out is funny)
+
+
+
+
+---
+
+
+
+
+# I'm <span class="gray">John Haugeland</span>
+(because pointing that out is funny)
+<span class="bottomcut">![](MrBean.jpg)</span>
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# In this talk
+
+
+
+
+---
+
+
+
+
+# Very little!
+
+
+
+
+---
+
+
+
+
+# React is about simplicity
+So today I will be too 😄
+
+
+
+
+---
+
+
+
+
+# <span class="red">An hour</span>?!?!?<br/>!?!!??1!11!1!!11one1!eleven
+
+
+
+
+---
+
+
+
+
+<span class="topcut">![](watch.jpg)</span>
+# Hour, schmour
+Ain't nobody got time for that
+<span class="bottomcut">![](SweetBrown.jpg)</span>
+
+
+
+
+---
+
+
+
+
+# I need about <span class="red">20 minutes</span>
+<span class="bottomcut">![](tree fiddy.jpg)</span>
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- What do you do in React
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- What do you do in React
+  - You make tags
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- What do you do in React
+  - You make tags
+  - <span class="red">That's it</span>
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- What do you do in React
+  - You make tags
+  - <span class="red">That's it</span>
+  - No, seriously
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+<span class="bottomcut tall">![](angularbooks2.png)</span>
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+<span class="bottomcut ht">![](Angular ToC.png)</span>
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+  - <span class="red">I don't want lots of stuff</span>
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+  - I don't want lots of stuff
+  - Lots of stuff is
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+  - I don't want lots of stuff
+  - Lots of stuff is
+     - Extra learning
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+  - I don't want lots of stuff
+  - Lots of stuff is
+     - Extra learning
+     - Extra reasoning
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+  - I don't want lots of stuff
+  - Lots of stuff is
+     - Extra learning
+     - Extra reasoning
+     - Extra complication
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+  - ... angular has lots of stuff
+  - I don't want lots of stuff
+  - Lots of stuff is
+     - Extra learning
+     - Extra reasoning
+     - Extra complication
+]
+<span class="bottomcut">![](SweetBrown2.jpg)</span>
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+- Less is more
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+- Less is more
+  - If there's only one system, there's only one place to look
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+- Less is more
+  - If there's only one system, there's only one place to look
+  - Simplicity is difficult!
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+- You make tags in React
+- "But Angular has directives"
+- Less is more
+  - If there's only one system, there's only one place to look
+  - Simplicity is difficult!
+  - <span class="red">Simplicity is worth fighting for</span>
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+# <span class="red">Simplicity is worth fighting for</span>
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+# Simplicity is worth fighting for
+
+Pick one to be responsible for.
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+# Simplicity is worth fighting for
+
+Pick one to be responsible for.
+
+<b>Deliver a repair next Thursday.</b>
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+# Simplicity is worth fighting for
+
+Pick one to be responsible for.
+
+Deliver a repair <b>next Thursday</b>.
+
+]
+
+<table class="comparison">
+  <tr>
+    <td><img src="SimpleEngine.gif"/></td>
+    <td><img src="ComplexEngine.jpeg"/></td>
+  </tr>
+</table>
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+]
+.right-column[
+
+# Simplicity is worth fighting for
+
+Pick one to be responsible for.
+
+Deliver a repair next Thursday.
+
+<b><span class="red">It's always next Thursday</span></b>.
+
+]
+
+<table class="comparison">
+  <tr>
+    <td><img src="SimpleEngine.gif"/></td>
+    <td><img src="ComplexEngine.jpeg"/></td>
+  </tr>
+</table>
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+]
+.right-column[
+
+# Pick one to be responsible for.
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+]
+.right-column[
+
+# Pick one to be responsible for.
+
+I googled "Example AngularJS Component."
+
+I got a [multiplication table](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app).
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+]
+.right-column[
+
+# Pick one to be responsible for.
+
+I googled "Example AngularJS Component."
+
+I got a [multiplication table](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app).
+
+*It's recent (two months,) it's by the YearOfMoo guy, and it's meant to be a beginner view of best practices.*
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+]
+.right-column[
+
+# Pick one to be responsible for.
+
+]
+<span class="midcutmid">![](Number Grid.png)</span>
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+]
+.right-column[
+
+# Pick one to be responsible for.
+
+]
+<span class="midcutleft">![](Number Grid.png)</span>
+<span class="midcutright">![](MrBean.jpg)</span>
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+]
+.right-column[
+
+# Pick one to be responsible for.
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<center>Multiplication grid, big deal &nbsp; &nbsp;</center>
+
+]
+<span class="midcutleft">![](Number Grid.png)</span>
+<span class="midcutright">![](MrBean.jpg)</span>
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# The Angular approach
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code
+1. Control template
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code
+1. Control template
+1. Base doc relevant HTML
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code
+1. Control template
+1. Base doc relevant HTML
+1. ...
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code `45 lines` <span class="fit">![](AngularJsCode.png)</span>
+1. Control template
+1. Base doc relevant HTML
+1. ...
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code `45 lines` <span class="fit">![](AngularJsCode.png)</span>
+1. Control template `6 lines` <span class="fit">![](ControlTemplate.png)</span>
+1. Base doc relevant HTML
+1. ...
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code `45 lines` <span class="fit">![](AngularJsCode.png)</span>
+1. Control template `6 lines` <span class="fit">![](ControlTemplate.png)</span>
+1. Base doc relevant HTML `7 lines` <span class="fit">![](RelevantBody.png)</span>
+1. ...
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+]
+.right-column[
+
+# [Angular approach](https://github.com/yearofmoo-articles/airpair-components-article/tree/master/app):
+
+1. Javascript code `45 lines` <span class="fit">![](AngularJsCode.png)</span>
+1. Control template `6 lines` <span class="fit">![](ControlTemplate.png)</span>
+1. Base doc relevant HTML `7 lines` <span class="fit">![](RelevantBody.png)</span>
+1. ... too complicated for a multiplication table!
+
+]
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# The React approach
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+]
+.right-column[
+
+# React approach:
+
+`15 lines being verbose`
+
+```javascript
+var MultiplicationTable = React.createClass({
+  render: function() {
+
+    var NumberRange = this.props.range || [1,2,3,4,5],
+        rows        = [];
+
+    NumberRange.map(function(Y) {
+
+      var ThisRow = (<tr>{
+        NumberRange.map(function(Y) {
+          return <td>{X * Y}</td>;
+        });
+      }</tr>);
+
+      rows.push(ThisRow);
+
+    });
+
+    return <table>{rows}</table>;
+
+  }
+});
+```
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+]
+.right-column[
+
+# React approach:
+
+`15 lines being verbose`
+
+```javascript
+var MultiplicationTable = React.createClass({
+  render: function() {
+
+    var NumberRange = this.props.range || [1,2,3,4,5],
+        rows        = [];
+
+    NumberRange.map(function(Y) {
+
+      var ThisRow = (<tr>{
+        NumberRange.map(function(Y) {
+          return <td>{X * Y}</td>;
+        });
+      }</tr>);
+
+      rows.push(ThisRow);
+
+    });
+
+    return <table>{rows}</table>;
+
+  }
+});
+```
+
+<b><span class="red">... done</span></b>
+
+]
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# P I C K
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## PICK
+]
+.right-column[
+
+# Simplicity is worth fighting for
+
+Pick one to be responsible for.
+
+Deliver a repair next Thursday.
+
+<b><span class="red">It's always next Thursday</span></b>.
+
+]
+
+<table class="comparison">
+  <tr>
+    <td><img src="SimpleEngine.gif"/></td>
+    <td><img src="ComplexEngine.jpeg"/></td>
+  </tr>
+</table>
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# Wrapping up
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+No controllers, no scopes, no watches, no models, no services, no stores, no filters, no services, no integrations.
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+No controllers, no scopes, no watches, no models, no services, no stores, no filters, no services, no integrations.
+
+<span class="red">No magic</span>.
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+No controllers, no scopes, no watches, no models, no services, no stores, no filters, no services, no integrations.
+
+No magic.
+
+Custom tags don't have to be painful and complicated.
+
+]
+
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+No controllers, no scopes, no watches, no models, no services, no stores, no filters, no services, no integrations.
+
+No magic.
+
+Custom tags don't have to be painful and complicated.
+
+Binding and interaction is where Angular pain traditionally comes from.
+
+]
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+No controllers, no scopes, no watches, no models, no services, no stores, no filters, no services, no integrations.
+
+No magic.
+
+Custom tags don't have to be painful and complicated.
+
+Binding and interaction is where Angular pain traditionally comes from.  In a single simple control, we dropped the line count
+by &frac34;, dropped the file count by &frac23;, and made sure that everything of importance was in the same place at once.
+
+]
+
+
+
+---
+
+
+
+
+layout: false
+.left-column[
+  ## Simplicity
+  ## Pick one
+  ## Angular
+  ## React
+  ## Pick
+  ## End notes
+]
+.right-column[
+
+# End notes
+
+HTML is simple because you can look at the HTML document and see where all parameters and data come from.
+
+No controllers, no scopes, no watches, no models, no services, no stores, no filters, no services, no integrations
+
+No magic
+
+Custom tags don't have to be painful and complicated.
+
+Binding and interaction is where Angular pain traditionally comes from.  In a single simple control, we dropped the line count
+by &frac34;, dropped the file count by &frac23;, and made sure that everything of importance was in the same place at once.
+
+<span class="red">With a complex situation, these benefits will accelerate</span>.
+
+]
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# Let's give react a chance 😀
+
+
+
+
+---
+
+
+
+
+template: inverse
+
+# Thanks for listening!
+
+
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
